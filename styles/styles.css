@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Chivo:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
     --accent: #FF4000;
@@ -6,14 +6,21 @@
 
     --deep: #201E1F;
     --ash: #292929;
-    --steel: #888888;
+    --steel: #777777;
     --grey: #BDBDBD;
     --light: #FFFFFF;
+
+    --shadow: drop-shadow(0 0 1rem var(--grey));
 
     --debug: 0px;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
+    background: var(--light);
     margin: 0;
     overflow-x: hidden;
 }
@@ -21,10 +28,12 @@ body {
 /* Navigation bar */
 
 nav {
+    --nav-gap: 2rem; /* Distance between hyperlinks */
+
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: var(--nav-gap);
 
     position: sticky;
     margin: 0;
@@ -40,7 +49,7 @@ nav {
 nav > div {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: var(--nav-gap);
 
     margin: 0;
     padding: 0;
@@ -63,7 +72,7 @@ main {
     gap: 6rem; /* Distance between sections */
 
     margin: 4rem auto;
-    max-width: 56rem;
+    max-width: 54rem;
     padding: 0 clamp(0rem, 4vw, 4rem);
 
     border: var(--debug) dotted green;
@@ -76,11 +85,28 @@ section {
     align-items: flex-start;
     gap: 8rem; /* Distance between items */
 
+    scroll-margin-top: 0;
     margin: 0;
     width: 100%;
 
     border: var(--debug) solid blue;
 }
+
+div.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+div.separator::before,
+div.separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--grey);
+}
+
+/* Flexbox */
 
 section div {border: var(--debug) dashed grey;}
 section > div {flex: 8 0 10rem; min-width: 10rem;}
@@ -93,9 +119,42 @@ section > div.minor {flex: 1 0 10rem;}
 
 img {width: 100%; height: auto;}
 
+div:has(img.graphic) {filter: var(--shadow);}
+img#g-alarm:hover {animation: graphic-shake 220ms linear infinite;}
+img#g-lamp:hover {animation: graphic-flicker 7000ms linear infinite;}
+img#g-door:hover {animation: graphic-knock 3000ms linear infinite;}
+img#g-vhs:hover {animation: graphic-tilt 2000ms ease-out infinite;}
+img#g-street:hover {animation: graphic-flicker 7000ms linear infinite;}
+
+@keyframes graphic-shake {
+    0% {transform: translate(-2px, 0);}
+    25% {transform: translate(2px, 0);}
+    50% {transform: translate(-2px, 0);}
+    75% {transform: translate(2px, 0);}
+    100% {transform: translate(-2px, 0);}
+}
+
+@keyframes graphic-flicker {
+    0%, 2%, 16%, 18%, 22%, 24%, 47%, 49% {filter: none;}
+    0.10%, 16.10%, 22.10%, 47.10% {filter: grayscale(40%) brightness(80%);}
+}
+
+@keyframes graphic-knock {
+    0%, 5%, 10%, 15%, 22%, 27% {transform: translate(0, 0);}
+    0.50% {transform: translate(3px, 1px);}
+    10.50% {transform: translate(-3.20px, 0px);}
+    22.50% {transform: translate(3px, -1px);}
+}
+
+@keyframes graphic-tilt {
+    0%, 30% {transform: rotate(0);}
+    10% {transform: rotate(5deg);}
+    20% {transform: rotate(-5deg);}
+}
+
 /* Type */
 
-.serif, strong {
+.serif {
     font-family: "Noto Serif", serif;
     font-optical-sizing: auto;
     font-weight: 380;
@@ -103,7 +162,7 @@ img {width: 100%; height: auto;}
             "wdth" 100;
 }
 
-strong, .ital {font-style: italic;}
+.ital {font-style: italic;}
 
 .sans {
     font-family: "Noto Sans", sans-serif;
@@ -121,11 +180,6 @@ strong, .ital {font-style: italic;}
             "wdth" 100;
 }
 
-.black {
-    font-family: "Archivo Black", sans-serif;
-    font-weight: 380;
-}
-
 /* Text */
 
 :is(h1, h2, h3, h4, h5, h6, p, span, a, li) {
@@ -135,21 +189,27 @@ strong, .ital {font-style: italic;}
 }
 
 h1 {
-    font-size: clamp(4rem, calc(2rem + 3vh), 10rem);
+    font-size: clamp(4rem, calc(2rem + 2vh - 0.25vw), 8rem);
     line-height: 1.4;
     color: var(--deep);
 }
 
 h2 {
-    font-size: clamp(1.4rem, calc(0.8rem + 1vh), 2.4rem);
+    font-size: clamp(1.3rem, calc(0.7rem + 1vh), 2.3rem);
+    color: var(--steel);
 }
 
 p {
     margin-top: 1rem;
-    font-size: clamp(1.6rem, calc(1rem + 1vh), 3rem);
+    font-size: clamp(1.5rem, calc(1rem + 1vh - 0.25vw), 2.8rem);
 }
 
 a {
     font-size: clamp(1.2rem, calc(0.8rem + 1vh), 2.2rem);
     text-decoration: none;
+}
+
+.separator {
+    font-size: clamp(1.0rem, calc(0.6rem + 1vh), 2rem);
+    color: var(--steel);
 }
