@@ -14,7 +14,7 @@ document.addEventListener('keydown', (e) => {
     const handler = KEY_HANDLERS[e.code];
 
     if (handler) {
-        handler();
+        //handler(); // Debug only
         //return;
     }
 
