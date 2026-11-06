@@ -1,106 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Q. Breakfield · Portfolio</title>
-    <link rel="stylesheet" href="styles/styles.css">
-    <script src="scripts/scripts.js" defer></script>
-</head>
-<body id="top">
-    <nav class="sans">
-        <!-- TODO: Add symbols to each of the hyperlinks -->
-        <div><a href="#top">Home</a></div>
-        <div><a href="#projects">Projects</a></div>
-        <div><a href="#">About</a></div>
-        <div><a href="#">Contact</a></div>
-    </nav>
+    <head>
+        <meta charset="UTF-8">
+        <title>Q. Breakfield · Portfolio</title>
+        <link rel="stylesheet" href="styles/styles.css">
+        <script src="scripts/scripts.js" defer></script>
+    </head>
+    <body id="top">
+        <nav class="regular">
+            <div><a href="#top">
+                <svg viewBox="0 0 24 24"><path d="M4,21V9l8-6l8,6V21H14V14H10v7H4Z"/></svg>
+                Home
+            </a></div>
+            <div><a href="#section-1">
+                <svg viewBox="0 0 24 24"><path d="M4,20q-0.82,0-1.41-0.59T2,18V6Q2,5.18 2.59,4.59T4,4h6l2,2h8q0.83,0 1.41,0.59Q22,7.18 22,8H4V18l2.4-8H23.5l-2.57,8.57q-0.2,0.65-0.74,1.04T19,20H4Z"/></svg>
+                Projects
+            </a></div>
+            <div><a href="#">
+                <svg viewBox="0 0 24 24"><path d="M9.18,10.83Q8,9.65 8,8T9.18,5.18T12,4t2.83,1.18T16,8t-1.17,2.82T12,12T9.18,10.83ZM4,20V17.2q0-0.85 0.44-1.56q0.44-0.71 1.16-1.09q1.55-0.78 3.15-1.16T12,13t3.25,0.39t3.15,1.16q0.72,0.38 1.16,1.09T20,17.2V20H4Z"/></svg>
+                About
+            </a></div>
+            <div><a href="#">
+                <svg viewBox="0 0 24 24"><path d="M4,20q-0.82,0-1.41-0.59T2,18V6Q2,5.18 2.59,4.59T4,4H20q0.83,0 1.41,0.59Q22,5.18 22,6V18q0,0.82-0.59,1.41T20,20H4Zm8-7l8-5V6l-8,5L4,6V8l8,5Z"/></svg>
+                Contact
+            </a></div>
+        </nav>
 
-    <main>
-        <section>
-            <div>
-                <h1 class="regular">Hello. I'm Quinn.</h1>
-                <p class="sans">
-                    At heart, I value the art of design and spend much of my time building games.
-                    Other times, you can find me tinkering with Python, Java, or the web dev trinity.
-                </p>
-            </div>
-        </section>
+        <main>
+            <section id="section-0">
+                <div>
+                    <h1 class="regular">Hello. I'm Quinn.</h1>
+                    <p class="sans">
+                        At heart, I value the art of design and spend much of my time building games.
+                        Other times, you can find me tinkering with Python, Java, or the web dev trinity.
+                    </p>
+                </div>
+            </section>
 
-        <section id="projects">
-            <div class="separator serif ital">projects</div>
-        </section>
+            <section>
+                <div class="separator serif ital">projects</div>
+            </section>
 
-        <section>
-            <div class="minor">
-                <img class="graphic" id="g-alarm" src="resources/graphic-alarm.png" alt="Alarm clock">
-            </div>
-            <div>
-                <h1 class="regular">Tremble</h1>
-                <h2 class="sans">2027 · Horror, Point & Click · Java Swing</h2>
-                <p class="sans">
-                    You wailed into the depths of the night. And the night called back. Coming soon.
-                </p>
-            </div>
-        </section>
+            <section id="section-1">
+                <div class="minor">
+                    <img class="graphic" id="g-alarm" src="resources/graphic-alarm.png" alt="Alarm clock">
+                </div>
+                <div>
+                    <h1 class="regular">
+                        <a href="#section-1">
+                            <span class="no-wrap">Tremble</span>
+                        </a>
+                    </h1>
+                    <h2 class="sans">2027 · Horror, Point & Click · Java Swing</h2>
+                    <p class="sans">
+                        You wailed into the depths of the night. And the night called back. Coming soon.
+                    </p>
+                </div>
+            </section>
 
-        <section>
-            <div>
-                <h1 class="regular">You Belong Here</h1>
-                <h2 class="sans">2026 · Horror, Puzzle · Unreal Engine</h2>
-                <p class="sans">
-                    Family man Philip Oakes wakes with a piercing headache, unable to remember his past.
-                    Dazed, he explores an old home, receiving guidance from a caller on the phone.
-                    As Philip walks through the familiar rooms, he uncovers a reality better left forgotten.
-                </p>
-            </div>
-            <div class="minor">
-                <img class="graphic" id="g-door" src="resources/graphic-door.png" alt="Closed door">
-            </div>
-        </section>
+            <section id="section-2">
+                <div>
+                    <h1 class="regular">
+                        <a href="https://store.steampowered.com/app/4217680/You_Belong_Here/" target="_blank">
+                            You Belong <span class="no-wrap">Here <svg viewBox="0 0 24 24" class="i-external"><path d="M5,21q-0.83,0-1.41-0.59T3,19V5Q3,4.17 3.59,3.59T5,3h7V5H5V19H19V12h2v7q0,0.82-0.59,1.41T19,21H5Zm4.7-5.3L8.3,14.3L17.6,5H14V3h7v7H19V6.4L9.7,15.7Z"/></svg></span>
+                        </a>
+                    </h1>
+                    <h2 class="sans">2026 · Horror, Puzzle · Unreal Engine</h2>
+                    <p class="sans">
+                        Family man Philip Oakes wakes with a piercing headache, unable to remember his past.
+                        Dazed, he explores an old home, receiving guidance from a caller on the phone.
+                        As Philip walks through the familiar rooms, he uncovers a reality better left forgotten.
+                    </p>
+                </div>
+                <div class="minor">
+                    <img class="graphic" id="g-door" src="resources/graphic-door.png" alt="Closed door">
+                </div>
+            </section>
 
-        <section>
-            <div class="minor">
-                <img class="graphic" id="g-lamp" src="resources/graphic-lamp.png" alt="Floor lamp">
-            </div>
-            <div>
-                <h1 class="regular">The New Apartment</h1>
-                <h2 class="sans">2025 · Horror, Linear · Unreal Engine</h2>
-                <p class="sans">
-                    Groggily awaking from the sofa, a man prepares for work in the morning.
-                    Yet, he swears there is something "off" about the place, reporting the occasional footstep or whisper.
-                    As the man searches for the source of these sounds, he finds himself in the center of something much more sinister.
-                </p>
-            </div>
-        </section>
+            <section id="section-3">
+                <div class="minor">
+                    <img class="graphic" id="g-lamp" src="resources/graphic-lamp.png" alt="Floor lamp">
+                </div>
+                <div>
+                    <h1 class="regular">
+                        <a href="https://store.steampowered.com/app/3404410/The_New_Apartment" target="_blank">
+                            The New <span class="no-wrap">Apartment <svg viewBox="0 0 24 24" class="i-external"><path d="M5,21q-0.83,0-1.41-0.59T3,19V5Q3,4.17 3.59,3.59T5,3h7V5H5V19H19V12h2v7q0,0.82-0.59,1.41T19,21H5Zm4.7-5.3L8.3,14.3L17.6,5H14V3h7v7H19V6.4L9.7,15.7Z"/></svg></span>
+                        </a>
+                    </h1>
+                    <h2 class="sans">2025 · Horror, Linear · Unreal Engine</h2>
+                    <p class="sans">
+                        Groggily awaking from the sofa, a man prepares for work in the morning.
+                        Yet, he swears there is something "off" about the place, reporting the occasional footstep or whisper.
+                        As the man searches for the source of these sounds, he finds himself in the center of something much more sinister.
+                    </p>
+                </div>
+            </section>
 
-        <section>
-            <div>
-                <h1 class="regular">Backrooms Footage</h1>
-                <h2 class="sans">2022 · Found Footage · Blender</h2>
-                <p class="sans">
-                    An unknown explorer records the Backrooms, a viral location known for its chilling atmosphere.
-                    As the wanderer documents their journey, they discover various landmarks and creatures living within.
-                    Despite their now unknown whereabouts, the explorer garnered over 1 million views online from the footage.
-                </p>
-            </div>
-            <div class="minor">
-                <img class="graphic" id="g-vhs" src="resources/graphic-vhs.png" alt="VHS cassette">
-            </div>
-        </section>
+            <section id="section-4">
+                <div>
+                    <h1 class="regular">
+                        <a href="https://www.youtube.com/playlist?list=PLVokARXe-gge82phiN4VDclw__-Lo7gPH" target="_blank">
+                            Backrooms <span class="no-wrap">Footage <svg viewBox="0 0 24 24" class="i-external"><path d="M5,21q-0.83,0-1.41-0.59T3,19V5Q3,4.17 3.59,3.59T5,3h7V5H5V19H19V12h2v7q0,0.82-0.59,1.41T19,21H5Zm4.7-5.3L8.3,14.3L17.6,5H14V3h7v7H19V6.4L9.7,15.7Z"/></svg></span>
+                        </a>
+                    </h1>
+                    <h2 class="sans">2022 · Found Footage · Blender</h2>
+                    <p class="sans">
+                        An unknown explorer records the Backrooms, a viral location known for its chilling atmosphere.
+                        As the wanderer documents their journey, they discover various landmarks and creatures living within.
+                        Despite their now unknown whereabouts, the explorer garnered over 1 million views online from the footage.
+                    </p>
+                </div>
+                <div class="minor">
+                    <img class="graphic" id="g-vhs" src="resources/graphic-vhs.png" alt="VHS cassette">
+                </div>
+            </section>
 
-        <section>
-            <div class="minor">
-                <img class="graphic" id="g-street" src="resources/graphic-street.png" alt="Street lamp">
-            </div>
-            <div>
-                <h1 class="regular">Dream-like Dread</h1>
-                <h2 class="sans">2022 · Horror, Browser · Unity 3D</h2>
-                <p class="sans">
-                    As you walk through a dreamy neighborhood, you must run and hide from a quick creature that follows you.
-                    Will you survive the five minutes alone, or will the figure catch you, waking you from the nightmare?
-                </p>
-            </div>
-        </section>
-    </main>
-</body>
+            <section id="section-5">
+                <div class="minor">
+                    <img class="graphic" id="g-street" src="resources/graphic-street.png" alt="Street lamp">
+                </div>
+                <div>
+                    <h1 class="regular">
+                        <a href="https://euclidean.itch.io/dream-like-dread" target="_blank">
+                            Dream-like <span class="no-wrap">Dread <svg viewBox="0 0 24 24" class="i-external"><path d="M5,21q-0.83,0-1.41-0.59T3,19V5Q3,4.17 3.59,3.59T5,3h7V5H5V19H19V12h2v7q0,0.82-0.59,1.41T19,21H5Zm4.7-5.3L8.3,14.3L17.6,5H14V3h7v7H19V6.4L9.7,15.7Z"/></svg></span>
+                        </a>
+                    </h1>
+                    <h2 class="sans">2022 · Horror, Browser · Unity 3D</h2>
+                    <p class="sans">
+                        As you walk through a dreamy neighborhood, you must run and hide from a quick creature that follows you.
+                        Will you survive the five minutes alone, or will the figure catch you, waking you from the nightmare?
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <!-- TODO: Add a footer -->
+    </body>
 </html>

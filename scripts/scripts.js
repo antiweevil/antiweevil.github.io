@@ -15,8 +15,8 @@ document.addEventListener('keydown', (e) => {
 
     if (handler) {
         handler();
-        return;
+        //return;
     }
 
-    console.log('Pressed a key without a handler.')
+    //console.log('Pressed a key without a handler.')
 });

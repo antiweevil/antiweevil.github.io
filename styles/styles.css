@@ -2,15 +2,13 @@
 
 :root {
     --accent: #FF4000;
-    --secondary: #E7ECEF;
+    --secondary: #b2b7bc;
 
     --deep: #201E1F;
     --ash: #292929;
-    --steel: #777777;
-    --grey: #BDBDBD;
     --light: #FFFFFF;
 
-    --shadow: drop-shadow(0 0 1rem var(--grey));
+    --shadow: drop-shadow(0 0 1rem var(--secondary));
 
     --debug: 0px;
 }
@@ -36,7 +34,6 @@ nav {
     gap: var(--nav-gap);
 
     position: sticky;
-    margin: 0;
     top: 0;
 
     padding: 1rem;
@@ -51,15 +48,27 @@ nav > div {
     align-items: center;
     gap: var(--nav-gap);
 
-    margin: 0;
-    padding: 0;
-
     border: var(--debug) solid green;
 }
 
 nav > div:not(:last-child)::after {
     content: "·";
-    color: var(--steel);
+    font-size: clamp(1.2rem, calc(0.8rem + 1vh), 2.2rem);
+    color: var(--secondary);
+}
+
+nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+
+    font-size: clamp(1.2rem, calc(0.8rem + 1vh), 2.2rem);
+    transition: 100ms color ease-out;
+}
+
+nav a:hover {
+    color: var(--accent);
 }
 
 /* Article elements */
@@ -67,12 +76,10 @@ nav > div:not(:last-child)::after {
 main {
     display: flex;
     flex-flow: column nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 6rem; /* Distance between sections */
+    gap: 8rem; /* Distance between sections */
 
     margin: 4rem auto;
-    max-width: 54rem;
+    max-width: 64rem;
     padding: 0 clamp(0rem, 4vw, 4rem);
 
     border: var(--debug) dotted green;
@@ -81,12 +88,10 @@ main {
 section {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
     align-items: flex-start;
     gap: 8rem; /* Distance between items */
 
-    scroll-margin-top: 0;
-    margin: 0;
+    scroll-margin-top: 8rem;
     width: 100%;
 
     border: var(--debug) solid blue;
@@ -97,13 +102,16 @@ div.separator {
     align-items: center;
     text-align: center;
     gap: 1rem;
+
+    font-size: clamp(1.2rem, calc(0.8rem + 1vh), 2.2rem);
+    color: var(--secondary);
 }
 
 div.separator::before,
 div.separator::after {
     content: '';
     flex: 1;
-    border-bottom: 1px solid var(--grey);
+    border-bottom: 1px solid var(--secondary);
 }
 
 /* Flexbox */
@@ -117,7 +125,7 @@ section > div.minor {flex: 1 0 10rem;}
 
 /* Visuals */
 
-img {width: 100%; height: auto;}
+div.minor img {width: 100%;}
 
 div:has(img.graphic) {filter: var(--shadow);}
 img#g-alarm:hover {animation: graphic-shake 220ms linear infinite;}
@@ -152,12 +160,38 @@ img#g-street:hover {animation: graphic-flicker 7000ms linear infinite;}
     20% {transform: rotate(-5deg);}
 }
 
+/* Icons */
+
+nav svg {
+    width: auto;
+    height: clamp(1.0rem, calc(0.6rem + 1vh), 2.0rem);
+    fill: var(--secondary);
+    transition: 100ms fill ease-out;
+}
+
+svg.i-external {
+    width: auto;
+    height: clamp(2rem, calc(1rem + 2vh - 0.5vw), 4rem);
+    fill: var(--secondary);
+    transition: 100ms fill ease-out;
+}
+
+h1:hover svg {
+    fill: var(--accent);
+}
+
+nav a:hover svg {
+    fill: var(--accent);
+}
+
+span.no-wrap {text-wrap: nowrap; white-space: nowrap;}
+
 /* Type */
 
 .serif {
     font-family: "Noto Serif", serif;
     font-optical-sizing: auto;
-    font-weight: 380;
+    font-weight: 360;
     font-variation-settings:
             "wdth" 100;
 }
@@ -167,7 +201,7 @@ img#g-street:hover {animation: graphic-flicker 7000ms linear infinite;}
 .sans {
     font-family: "Noto Sans", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 380;
+    font-weight: 360;
     font-variation-settings:
             "wdth" 100;
 }
@@ -175,14 +209,14 @@ img#g-street:hover {animation: graphic-flicker 7000ms linear infinite;}
 .regular {
     font-family: "Chivo", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 380;
+    font-weight: 300;
     font-variation-settings:
             "wdth" 100;
 }
 
 /* Text */
 
-:is(h1, h2, h3, h4, h5, h6, p, span, a, li) {
+:is(h1, h2, p, span, a) {
     margin: 0; padding: 0;
     color: var(--ash);
     line-height: 1.8;
@@ -190,13 +224,17 @@ img#g-street:hover {animation: graphic-flicker 7000ms linear infinite;}
 
 h1 {
     font-size: clamp(4rem, calc(2rem + 2vh - 0.25vw), 8rem);
-    line-height: 1.4;
+    line-height: 1.2;
     color: var(--deep);
+}
+
+h1 * {
+    line-height: inherit;
 }
 
 h2 {
     font-size: clamp(1.3rem, calc(0.7rem + 1vh), 2.3rem);
-    color: var(--steel);
+    color: var(--secondary);
 }
 
 p {
@@ -205,11 +243,5 @@ p {
 }
 
 a {
-    font-size: clamp(1.2rem, calc(0.8rem + 1vh), 2.2rem);
     text-decoration: none;
-}
-
-.separator {
-    font-size: clamp(1.0rem, calc(0.6rem + 1vh), 2rem);
-    color: var(--steel);
 }
