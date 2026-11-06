@@ -15,7 +15,6 @@
 
 body {
     margin: 0;
-    min-height: 500rem; /* TODO: Remove me */
     overflow-x: hidden;
 }
 
@@ -64,8 +63,8 @@ main {
     gap: 6rem; /* Distance between sections */
 
     margin: 4rem auto;
-    max-width: 72rem;
-    padding: 0 4rem;
+    max-width: 56rem;
+    padding: 0 clamp(0rem, 4vw, 4rem);
 
     border: var(--debug) dotted green;
 }
@@ -84,8 +83,11 @@ section {
 }
 
 section div {border: var(--debug) dashed grey;}
-section > div {flex: 3 0 0;}
-section > div.minor {flex: 2 0 0;}
+section > div {flex: 8 0 10rem; min-width: 10rem;}
+section > div.minor {flex: 1 0 10rem;}
+@media (orientation: portrait) or (min-width: 240rem) {
+    section > div {flex: 3 0 10rem;}
+}
 
 /* Visuals */
 
