@@ -1,9 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Chivo:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
     --accent: #FF4000;
     --secondary: #E7ECEF;
 
     --deep: #201E1F;
+    --ash: #292929;
+    --steel: #888888;
     --grey: #BDBDBD;
     --light: #FFFFFF;
 
@@ -13,39 +16,66 @@
 body {
     margin: 0;
     min-height: 500rem; /* TODO: Remove me */
+    overflow-x: hidden;
 }
 
+/* Navigation bar */
+
 nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
     position: sticky;
+    margin: 0;
     top: 0;
 
-    width: 100%;
     padding: 1rem;
     z-index: 1;
 
     background: var(--light);
+    border: var(--debug) solid green;
 }
+
+nav > div {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    margin: 0;
+    padding: 0;
+
+    border: var(--debug) solid green;
+}
+
+nav > div:not(:last-child)::after {
+    content: "·";
+    color: var(--steel);
+}
+
+/* Article elements */
 
 main {
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: center;
-    gap: 1rem;
+    gap: 6rem; /* Distance between sections */
 
-    margin: 2rem auto;
-    max-width: 70rem;
-    padding: 0 1rem;
+    margin: 4rem auto;
+    max-width: 72rem;
+    padding: 0 4rem;
 
     border: var(--debug) dotted green;
 }
 
 section {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 1rem;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8rem; /* Distance between items */
 
     margin: 0;
     width: 100%;
@@ -53,64 +83,71 @@ section {
     border: var(--debug) solid blue;
 }
 
-section > div {
-    margin: 0;
-    padding: 0;
+section div {border: var(--debug) dashed grey;}
+section > div {flex: 3 0 0;}
+section > div.minor {flex: 2 0 0;}
 
-    border: var(--debug) dotted grey;
-}
+/* Visuals */
 
-svg {
-    overflow: visible;
-}
+img {width: 100%; height: auto;}
 
-svg, text {
-    padding: 0;
-    margin: 0;
-}
+/* Type */
 
-.serif {
+.serif, strong {
     font-family: "Noto Serif", serif;
     font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
+    font-weight: 380;
     font-variation-settings:
             "wdth" 100;
 }
 
+strong, .ital {font-style: italic;}
+
 .sans {
     font-family: "Noto Sans", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
+    font-weight: 380;
     font-variation-settings:
             "wdth" 100;
 }
 
 .regular {
-    font-family: "Archivo", sans-serif;
+    font-family: "Chivo", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
+    font-weight: 380;
     font-variation-settings:
             "wdth" 100;
 }
 
 .black {
     font-family: "Archivo Black", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+    font-weight: 380;
 }
+
+/* Text */
 
 :is(h1, h2, h3, h4, h5, h6, p, span, a, li) {
-    margin: 0;
-    padding: 0;
+    margin: 0; padding: 0;
+    color: var(--ash);
+    line-height: 1.8;
 }
 
+h1 {
+    font-size: clamp(4rem, calc(2rem + 3vh), 10rem);
+    line-height: 1.4;
+    color: var(--deep);
+}
+
+h2 {
+    font-size: clamp(1.4rem, calc(0.8rem + 1vh), 2.4rem);
+}
 
 p {
-    font-size: 1.2rem;
-    line-height: 1.8;
+    margin-top: 1rem;
+    font-size: clamp(1.6rem, calc(1rem + 1vh), 3rem);
+}
 
-    color: var(--deep);
+a {
+    font-size: clamp(1.2rem, calc(0.8rem + 1vh), 2.2rem);
+    text-decoration: none;
 }

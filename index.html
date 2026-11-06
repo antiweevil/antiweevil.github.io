@@ -4,33 +4,46 @@
     <meta charset="UTF-8">
     <title>Q. Breakfield · Portfolio</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/scripts.js" defer></script>
 </head>
 <body>
-    <nav>
+    <nav class="sans">
         <!-- TODO: Add symbols to each of the hyperlinks -->
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Projects</a>
-        <a href="#">Contact</a>
+        <div><a href="#">Home</a></div>
+        <div><a href="#">About</a></div>
+        <div><a href="#">Projects</a></div>
+        <div><a href="#">Contact</a></div>
     </nav>
 
     <main>
         <section>
-            <svg viewBox="0 0 100 20" width="80%" height="100%">
-                <text class="regular" x="0" y="15" textLength="125" lengthAdjust="spacingAndGlyphs">
-                    Quinn Breakfield
-                </text>
-            </svg>
+            <div>
+                <h1 class="regular">Hello. I'm Quinn.</h1>
+                <p class="sans">
+                    At heart, I value the <strong>art of design</strong> and spend much of my time planning and building games.
+                    Other times, you can find me tinkering with Python, Java, or the web dev trinity.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <img src="resources/placeholder-short.svg" alt="Profile picture">
         </section>
 
         <section>
             <div>
-                <p class="sans">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <h1 class="regular">You Belong Here</h1>
+                <h2 class="sans">2026 · Horror · Unreal Engine</h2>
+                <p class="sans">
+                    Family man Philip Oakes wakes with a piercing headache, unable to remember his past. Dazed, he explores an old home, receiving guidance from a caller on the phone. As Philip walks through the familiar rooms, he uncovers a reality better left forgotten.
+                </p>
             </div>
-            <div>
-                <p class="sans">Lorem ipsum</p>
+            <div class="minor">
+                <img src="resources/placeholder-narrow.svg" alt="Profile picture">
             </div>
-            </section>
+        </section>
+
+
     </main>
 </body>
 </html>
