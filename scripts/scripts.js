@@ -1,5 +1,11 @@
+document.getElementById("copyright-year").textContent = new Date().getFullYear().toString();
+
+/* ------------ */
+
 const r = document.querySelector(':root');
 let n = 2;
+
+let debug = false;
 
 const KEY_HANDLERS = {
     KeyE: () => {
@@ -9,14 +15,6 @@ const KEY_HANDLERS = {
 };
 
 document.addEventListener('keydown', (e) => {
-    //e.preventDefault();
-
     const handler = KEY_HANDLERS[e.code];
-
-    if (handler) {
-        //handler(); // Debug only
-        //return;
-    }
-
-    //console.log('Pressed a key without a handler.')
+    if (handler && debug) { handler(); }
 });

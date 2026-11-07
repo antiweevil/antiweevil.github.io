@@ -13,7 +13,9 @@
         <script src="scripts/scripts.js" defer></script>
     </head>
     <body id="top">
-        <nav class="regular">
+
+        <!-- Navigation bar -->
+        <nav>
             <div><a href="#top">
                 <svg class="i-block" aria-hidden="true"><use href="resources/icon-home.svg#i-home"></use></svg>
                 Home
@@ -32,32 +34,36 @@
             </a></div>
         </nav>
 
+        <!-- TODO: New tab accessibility hints -->
+
+        <!-- Main article -->
         <main>
+
+            <!-- Hero -->
             <section id="section-hero">
                 <div>
-                    <h1 class="regular">
-                        <span><svg class="i-block" id="i-flower" aria-hidden="true"><use href="resources/icon-twisted.svg#i-twisted"></use></svg>Hello. I'm Quinn.</span>
+                    <h1>
+                        <span><svg class="i-block i-flower" aria-hidden="true"><use href="resources/icon-twisted.svg#i-twisted"></use></svg>Hello. I'm Quinn.</span>
                     </h1>
                     <p class="narrow">
-                        At heart, I value the art of design and spend much of my time building games.
+                        At heart, I appreciate the art of design and spend much of my time building games.
                         Other times, you can find me tinkering with Python, Java, or the web dev trinity.
                     </p>
                     <!-- TODO: About me hyperlink -->
                 </div>
             </section>
 
+            <!-- Separator -->
             <section id="projects">
                 <div class="separator"><h2>projects</h2></div>
             </section>
 
             <!-- TODO: Add YouTube links -->
 
-            <section id="section-1">
-                <div class="minor">
-                    <img class="graphic" id="g-alarm" src="resources/graphic-alarm.png" alt="Alarm clock" loading="lazy">
-                </div>
+            <!-- Tremble -->
+            <section>
                 <div>
-                    <h3 class="regular">
+                    <h3>
                         <span class="no-wrap">Tremble</span>
                     </h3>
                     <p class="tags">2027 · Horror, Point & Click · Java Swing</p>
@@ -65,13 +71,33 @@
                         You called into the depths of the night. And the night called back. Coming soon.
                     </p>
                 </div>
+                <div class="minor">
+                    <img class="graphic" id="g-alarm" src="resources/graphic-alarm.png" alt="Alarm clock" loading="lazy" width="621" height="806">
+                </div>
             </section>
 
-            <!-- TODO: add ObscureUSB -->
-
-            <section id="section-2">
+            <!-- Obscure USB -->
+            <section>
                 <div>
-                    <h3 class="regular">
+                    <h3>
+                        <a href="https://github.com/antiweevil/obscure-usb/" target="_blank">
+                            Obscure <span class="no-wrap">USB <svg class="i-inline" aria-hidden="true"><use href="resources/icon-open.svg#i-open"></use></svg></span>
+                        </a>
+                    </h3>
+                    <p class="tags">2026 · Experimental BadUSB · Python</p>
+                    <p>
+                        A program that generates BadUSB payloads. On execution, it establishes a secure reverse shell between a Linux machine and a Windows target.
+                    </p>
+                </div>
+                <div class="minor">
+                    <img class="graphic" id="g-usb" src="resources/graphic-usb.png" alt="Malicious USB device" loading="lazy" width="789" height="1379">
+                </div>
+            </section>
+
+            <!-- You Belong Here -->
+            <section>
+                <div>
+                    <h3>
                         <a href="https://store.steampowered.com/app/4217680/You_Belong_Here/" target="_blank">
                             You Belong <span class="no-wrap">Here <svg class="i-inline" aria-hidden="true"><use href="resources/icon-open.svg#i-open"></use></svg></span>
                         </a>
@@ -84,16 +110,14 @@
                     </p>
                 </div>
                 <div class="minor">
-                    <img class="graphic" id="g-door" src="resources/graphic-door.png" alt="Closed door" loading="lazy">
+                    <img class="graphic" id="g-door" src="resources/graphic-door.png" alt="Closed door" loading="lazy" width="806" height="1587">
                 </div>
             </section>
 
-            <section id="section-3">
-                <div class="minor">
-                    <img class="graphic" id="g-lamp" src="resources/graphic-lamp.png" alt="Floor lamp" loading="lazy">
-                </div>
+            <!-- The New Apartment -->
+            <section>
                 <div>
-                    <h3 class="regular">
+                    <h3>
                         <a href="https://store.steampowered.com/app/3404410/The_New_Apartment" target="_blank">
                             The New <span class="no-wrap">Apartment <svg class="i-inline" aria-hidden="true"><use href="resources/icon-open.svg#i-open"></use></svg></span>
                         </a>
@@ -105,13 +129,18 @@
                         As the man searches for the source of these sounds, he finds himself in the center of something much more sinister.
                     </p>
                 </div>
+                <div class="minor">
+                    <img class="graphic" id="g-lamp" src="resources/graphic-lamp.png" alt="Floor lamp" loading="lazy" width="905" height="1429">
+                </div>
             </section>
 
-            <section id="section-4">
+            <!-- Found Footage -->
+            <section>
                 <div>
-                    <h3 class="regular">
+                    <h3>
                         <a href="https://www.youtube.com/playlist?list=PLVokARXe-gge82phiN4VDclw__-Lo7gPH" target="_blank">
-                            Backrooms <span class="no-wrap">Footage <svg class="i-inline" aria-hidden="true"><use href="resources/icon-open.svg#i-open"></use></svg></span></a>
+                            Backrooms <span class="no-wrap">Footage <svg class="i-inline" aria-hidden="true"><use href="resources/icon-open.svg#i-open"></use></svg></span>
+                        </a>
                     </h3>
                     <p class="tags">2022 · Found Footage · Blender</p>
                     <p>
@@ -121,18 +150,17 @@
                     </p>
                 </div>
                 <div class="minor">
-                    <img class="graphic" id="g-vhs" src="resources/graphic-vhs.png" alt="VHS cassette" loading="lazy">
+                    <img class="graphic" id="g-vhs" src="resources/graphic-vhs.png" alt="VHS cassette" loading="lazy" width="686" height="1233">
                 </div>
             </section>
 
-            <section id="section-5">
-                <div class="minor">
-                    <img class="graphic" id="g-street" src="resources/graphic-street.png" alt="Street lamp" loading="lazy">
-                </div>
+            <!-- Dream-like Dread -->
+            <section>
                 <div>
-                    <h3 class="regular">
+                    <h3>
                         <a href="https://euclidean.itch.io/dream-like-dread" target="_blank">
-                            Dream-like <span class="no-wrap">Dread <svg class="i-inline" aria-hidden="true"><use href="resources/icon-open.svg#i-open"></use></svg></span></a>
+                            Dream-like <span class="no-wrap">Dread <svg class="i-inline" aria-hidden="true"><use href="resources/icon-open.svg#i-open"></use></svg></span>
+                        </a>
                     </h3>
                     <p class="tags">2022 · Horror, Browser · Unity 3D</p>
                     <p>
@@ -140,9 +168,18 @@
                         Will you survive the five minutes alone, or will the figure catch you, waking you from the nightmare?
                     </p>
                 </div>
+                <div class="minor">
+                    <img class="graphic" id="g-street" src="resources/graphic-street.png" alt="Street lamp" loading="lazy" width="1277" height="2484">
+                </div>
             </section>
         </main>
 
-        <!-- TODO: Add a footer -->
+        <!-- Footer -->
+        <footer>
+            <div class="grotesque">
+                <p>© Quinn Breakfield <span id="copyright-year">2026</span>. All rights reserved.</p>
+                <p><svg class="i-true i-flower" aria-hidden="true"><use href="resources/icon-twisted.svg#i-twisted"></use></svg></p>
+            </div>
+        </footer>
     </body>
 </html>
